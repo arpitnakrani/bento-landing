@@ -2,6 +2,7 @@ import { SocialCardProps } from '@/types/SocialCardProps';
 import Image from 'next/image';
 import React from 'react'
 import Button from './Button';
+import { SocialPlatformOverview } from './SocialPlatformOverview';
 
 interface ISocialMediaCard {
     rowSpan: number;
@@ -27,12 +28,9 @@ export const SocialMedialCard = ({ colSpan, rowSpan, platformData }: ISocialMedi
 }
 
 const Layout1X1 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-1 row-span-1 h-full p-3 rounded-2xl shadow-sm border-solid border border-gray-200 bg-${platformData.bgColor}`}>
+    return <div className={`col-span-1 row-span-1 h-full p-6 rounded-2xl shadow-sm border-solid border border-gray-200 max-h-[200px]    bg-${platformData.bgColor}`}>
         <div className='flex justify-between flex-col h-full'>
-            <div className='flex flex-col gap-1'>
-                <div><Image src={platformData.logo || ''} width={40} height={25} alt={platformData.platformName} /></div>
-                <p className='text-sm'>{platformData.platformName}</p>
-            </div>
+            <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
             <div>
                 <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
             </div>
@@ -41,63 +39,54 @@ const Layout1X1 = ({ platformData }: { platformData: SocialCardProps }) => {
 
 }
 const Layout1X2 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-2 row-span-1 p-3  h-full rounded-2xl shadow-sm border-solid border border-gray-200 bg-${platformData.bgColor}`}>
-        <div className='flex justify-between gap-4 h-full'>
-            <div>
-                <div className='flex justify-between flex-col h-full'>
-                    <div>
-                        <div><Image src={platformData.logo || ''} width={40} height={25} alt={platformData.platformName} /></div>
-                        <p>{platformData.platformName}</p>
-                    </div>
-                    <div>
-                        <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
-                    </div>
+    return <div className={`col-span-2 row-span-1 p-6  h-full rounded-2xl shadow-sm border-solid border border-gray-200 max-h-[200px] bg-${platformData.bgColor}`}>
+        <div className='flex justify-between gap-8 h-full'>
+            <div className='flex justify-between flex-col gap-4 h-full'>
+                <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
+                <div>
+                    <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
                 </div>
             </div>
-            <div className='flex-1'>
-                <div className='flex flex-col gap-4 items-end'>
-                    {platformData.images.splice(0, 2).map((image, index) => <Image className={`rounded-md w-36`} src={image} width={100} height={50} alt='image' key={index} />)}
+            <div className='flex-1 h-full'>
+                <div className='grid grid-cols-2 grid-rows-2 gap-2 items-end h-full'>
+                    {platformData.images.splice(0, 4).map((image, index) => <Image className={`col-span-1 row-span-1 rounded-md w-full h-full`} src={image} width={50} height={50} alt='image' key={index} />)}
                 </div>
             </div>
         </div>
     </div>
 }
 const Layout2X1 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-1 row-span-2 p-3  rounded-2xl shadow-sm border-solid border border-gray-200 bg-${platformData.bgColor}`}>
-        <div className='flex justify-between flex-col h-full'>
-            <div>
-                <div><Image src={platformData.logo || ''} width={40} height={25} alt={platformData.platformName} /></div>
-                <p>{platformData.platformName}</p>
+    return <div className={`col-span-1 row-span-2 p-6  rounded-2xl shadow-sm border-solid border border-gray-200 bg-${platformData.bgColor}`}>
+        <div className='flex justify-between flex-col h-full gap-6'>
+            <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
+            <div className='flex-1'>
+                <Image src={platformData.images?.[0]} className='h-full' width={100} height={200} alt='' />
             </div>
             <div>
-                {
-                    <Image src={platformData.images?.[0]} width={100} height={200} alt='' />
-                }
-            </div>
-            <div>
-                <button className='text-xs'>{platformData.buttonLabel} {platformData.followers}</button>
+                <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
             </div>
         </div>
     </div>
 }
 const Layout2X2 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-2 row-span-2 p-3  rounded-2xl shadow-sm border-solid border border-gray-200 bg-${platformData.bgColor}`}>
-        <div>
-
-            <div className='flex justify-between  h-full'>
+    return <div className={`col-span-2 row-span-2 p-6  rounded-2xl shadow-sm border-solid border border-gray-200 bg-${platformData.bgColor}`}>
+        <div className='flex flex-col justify-between h-full gap-8'>
+            <div className='flex justify-between '>
+                <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
                 <div>
-                    <div><Image src={platformData.logo || ''} width={40} height={25} alt={platformData.platformName} /></div>
-                    <p>{platformData.platformName}</p>
-                </div>
-                <div>
-                    <button className='text-xs'>{platformData.buttonLabel} {platformData.followers}</button>
+                    <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
                 </div>
             </div>
-            <div>
-                <div className='grid grid-cols-3 grid-rows-2'>
-                    {platformData.images.map((image, index) => <Image className={`col-span-1 row-span-1 rounded-md`} src={image} width={100} height={100} alt='image' key={index} />)}
+            <div className='flex-1'>
+                <div className='grid grid-cols-3 grid-rows-6 gap-2 items-end h-full'>
+                    {platformData.images.map((image, index) => <div className='col-span-1 row-span-3 h-full w-full' key={index}>
+                        <Image className={`rounded-md w-full h-full`} src={image} width={50} height={50} alt='image' key={index} />
+                    </div>
+                    )}
                 </div>
             </div>
         </div>
     </div>
 }
+
+
