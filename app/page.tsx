@@ -18,9 +18,10 @@ import youkidImg from "../public/assets/images/socialLinkImages/abc.jpeg"
 import facebookLogo from "../public/assets/images/socialLinkImages/facebookLogo.svg"
 import emailLogo from "../public/assets/images/socialLinkImages/emailLogo.svg"
 import cardImg from "../public/assets/images//socialLinkImages/cardImg.jpeg"
+import { SocialCardProps } from "@/types/SocialCardProps";
 
 export default function Home() {
-  const socialCards = [
+  const socialCards: SocialCardProps[] = [
     {
       logo: youtubeLogo,
       platformName: 'YouTube',
@@ -32,21 +33,20 @@ export default function Home() {
       buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
       cardBgColor: 'bg-red-100',
       customLayout: 'custom',
-      colSpan: 'md:col-span-1 xl:col-span-1',
-      rowSpan: 'xl:row-span-1'
+      bgColor: 'red-50'
     },
     {
       logo: tiktokLogo,
       platformName: 'TikTok',
       handle: 'TikTok',
       followers: '4.7K', // Ensure followers is a string
-      images: [],
+      images: [youkidImg],
       link: 'https://www.tiktok.com/@meital_official',
       buttonLabel: 'Follow',
       buttonBgColor: 'bg-red-600', // Tailwind CSS class for background color
       website: "@meital_official",
-      colSpan: 'md:col-span-1 xl:col-span-1',
-      rowSpan: 'xl:row-span-2'
+      bgColor: 'red-50'
+
     },
     {
       logo: youKidLogo,
@@ -57,14 +57,16 @@ export default function Home() {
       images: [youkidImg],
       link: 'https://www.youkid.co.il/',
       customLayout: 'custom',
-      colSpan: 'md:col-span-1 xl:col-span-1',
-      rowSpan: 'xl:row-span-1',
+      bgColor: 'red-50'
+
     },
     {
       platformName: 'imageOnly',
       images: [cardImg],// Replace with actual image paths
       link: 'https://www.instagram.com/meital_official/?igsh=MXB1a3p2ZW55YWU0bg%3D%3D&utm_source=qr',
-      customLayout: "imageOnly"
+      customLayout: "imageOnly",
+      bgColor: 'red-50'
+
     },
     {
       logo: instagramLogo,
@@ -79,6 +81,8 @@ export default function Home() {
       link: 'https://www.instagram.com/meital_official/?igsh=MXB1a3p2ZW55YWU0bg%3D%3D&utm_source=qr',
       buttonLabel: 'Follow',
       buttonBgColor: 'bg-customBlue', // Tailwind CSS class for background color
+      bgColor: 'red-50'
+
     },
     {
       logo: facebookLogo,
