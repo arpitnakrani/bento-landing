@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ProfileCard from "@/components/ProfileCard";
 import youtubeImg1 from "../public/assets/images/socialLinkImages/youtubeImg1.jpeg"
 import youtubeImg2 from "../public/assets/images/socialLinkImages/youtubeImg2.jpeg"
@@ -11,12 +10,14 @@ import instagramImg4 from "../public/assets/images/socialLinkImages/instagramImg
 import instagramImg5 from "../public/assets/images/socialLinkImages/instagramImg5.jpeg"
 import instagramImg6 from "../public/assets/images/socialLinkImages/instagramImg6.jpeg"
 import SocialCardsContainer from "@/components/SocialCardsContainer";
-import bentoBtnImg from "../public/assets/images/socialLinkImages/bentoBtnImg.svg"
 import youKidLogo from "../public/assets/images/socialLinkImages/youKidLogo.png"
 import youtubeLogo from "../public/assets/images/socialLinkImages/youtubelogo.svg"
 import instagramLogo from "../public/assets/images/socialLinkImages/instagramLogo.svg"
 import tiktokLogo from "../public/assets/images/socialLinkImages/tiktokLogo.svg"
 import youkidImg from "../public/assets/images/socialLinkImages/abc.jpeg"
+import facebookLogo from "../public/assets/images/socialLinkImages/facebookLogo.svg"
+import emailLogo from "../public/assets/images/socialLinkImages/emailLogo.svg"
+import cardImg from "../public/assets/images//socialLinkImages/cardImg.jpeg"
 
 export default function Home() {
   const socialCards = [
@@ -30,7 +31,9 @@ export default function Home() {
       buttonLabel: 'Subscribe',
       buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
       cardBgColor: 'bg-red-100',
-      customLayout: 'custom'
+      customLayout: 'custom',
+      colSpan: 'md:col-span-1 xl:col-span-1',
+      rowSpan: 'xl:row-span-1'
     },
     {
       logo: tiktokLogo,
@@ -41,23 +44,33 @@ export default function Home() {
       link: 'https://www.tiktok.com/@meital_official',
       buttonLabel: 'Follow',
       buttonBgColor: 'bg-red-600', // Tailwind CSS class for background color
-      website: "@meital_official"
+      website: "@meital_official",
+      colSpan: 'md:col-span-1 xl:col-span-1',
+      rowSpan: 'xl:row-span-2'
     },
     {
       logo: youKidLogo,
       platformName: 'Youkid',
       handle: "Youkid | יוקיד - עולם מופלא לילדים",
-      followers: '', // Add an empty string or a suitable value
+      followers: '',
       website: 'youkid.co.il',
       images: [youkidImg],
       link: 'https://www.youkid.co.il/',
-      customLayout: 'custom'
+      customLayout: 'custom',
+      colSpan: 'md:col-span-1 xl:col-span-1',
+      rowSpan: 'xl:row-span-1',
+    },
+    {
+      platformName: 'imageOnly',
+      images: [cardImg],// Replace with actual image paths
+      link: 'https://www.instagram.com/meital_official/?igsh=MXB1a3p2ZW55YWU0bg%3D%3D&utm_source=qr',
+      customLayout: "imageOnly"
     },
     {
       logo: instagramLogo,
       platformName: 'Instagram',
-      handle: '',
-      website: "@mia_w.",
+      handle: '@mia_w.',
+      website: "",
       followers: '4.7K',
       images: [
         instagramImg1, instagramImg2, instagramImg3,
@@ -66,11 +79,10 @@ export default function Home() {
       link: 'https://www.instagram.com/meital_official/?igsh=MXB1a3p2ZW55YWU0bg%3D%3D&utm_source=qr',
       buttonLabel: 'Follow',
       buttonBgColor: 'bg-customBlue', // Tailwind CSS class for background color
-      pattern: true
     },
     {
-      logo: youKidLogo,
-      platformName: 'My facebook',
+      logo: facebookLogo,
+      platformName: 'Facebook',
       handle: "My facebook",
       followers: '', // Add an empty string or a suitable value
       website: 'facebook.com',
@@ -79,8 +91,8 @@ export default function Home() {
       customLayout: 'custom'
     },
     {
-      logo: youKidLogo,
-      platformName: 'Youkid',
+      logo: emailLogo,
+      platformName: 'Email',
       handle: "My Email",
       followers: '', // Add an empty string or a suitable value
       website: 'gmail.com',
@@ -90,17 +102,12 @@ export default function Home() {
     },
   ];
 
-
   return (
-    <main className="min-h-screen flex-col p-24">
+    <main className="min-h-screen flex-col sticky top-0">
       <div className="mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-20">
           <ProfileCard />
           <SocialCardsContainer socialCards={socialCards} />
-        </div>
-        <div className='flex'>
-          <button className='py-3 px-3.5 flex items-center text-white bg-customBlue font-semibold text-xs rounded-lg'><Image className='mr-2' width={18} height={18} src={bentoBtnImg} alt='btnImg' /> Create Your Bento</button>
-          <button className='py-3 px-3.5 flex items-center text-slate-600 font-semibold text-xs '>Login</button>
         </div>
       </div>
     </main>

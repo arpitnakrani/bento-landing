@@ -2,10 +2,10 @@ import { StaticImageData } from 'next/image';
 import { IconType } from 'react-icons';
 
 export interface SocialCardProps {
-    logo: StaticImageData;
+    logo?: StaticImageData | undefined;
     platformName: string;
-    handle: string;
-    followers: string;
+    handle?: string;
+    followers?: string;
     images: StaticImageData[]; // Array of image URLs
     link: string;
     buttonLabel?: string;
@@ -14,5 +14,7 @@ export interface SocialCardProps {
     pattern?: boolean; // Optional prop to indicate if the pattern should be shown
     customLayout?: string;
     website?: string;
+    colSpan?: string;
+    rowSpan?: string;
 }
 
