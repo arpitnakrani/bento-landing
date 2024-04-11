@@ -14,11 +14,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        customBlue: 'rgb(118, 140, 255)',
-        customRed: 'rgb(255 0 0)'
+        customBlue: "rgb(118, 140, 255)",
+        customRed: "rgb(255 0 0)",
       },
       boxShadow: {
-        'inset-custom': 'inset 0 0 0 1px rgba(0,0,0,.06)',
+        custom: "0 2px 4px rgba(0, 0, 0, 0.04)",
       },
     },
   },

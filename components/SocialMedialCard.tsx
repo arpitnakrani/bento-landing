@@ -28,7 +28,7 @@ export const SocialMedialCard = ({ colSpan, rowSpan, platformData }: ISocialMedi
 }
 
 const Layout1X1 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-1 row-span-1 h-full lg:p-6 md:p-6 p-4 rounded-2xl shadow-sm border-solid border border-gray-200 max-h-[200px]  bg-${platformData.bgColor} order-first`}>
+    return <div className={`col-span-1 row-span-1  lg:p-6 md:p-6 p-4 rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200 h-[200px]  order-first`}>
         <div className='flex justify-between flex-col h-full'>
             <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
             <div>
@@ -39,9 +39,9 @@ const Layout1X1 = ({ platformData }: { platformData: SocialCardProps }) => {
 
 }
 const Layout1X2 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-2 row-span-1 p-6  h-full rounded-2xl shadow-sm border-solid border border-gray-200 max-h-[200px] bg-${platformData.bgColor}`}>
+    return <div className={`col-span-2 row-span-1 p-6   rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200 h-[200px]`}>
         <div className='flex justify-between gap-8 h-full'>
-            <div className='flex justify-between flex-col gap-4 h-full w-6/12'>
+            <div className='flex justify-between flex-col gap-4 h-full w-5/12'>
                 <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
                 {platformData.buttonLabel &&
                     <div>
@@ -49,7 +49,7 @@ const Layout1X2 = ({ platformData }: { platformData: SocialCardProps }) => {
                     </div>
                 }
             </div>
-            <div className='flex-1 h-full w-6/12'>
+            <div className='flex-1 h-full w-7/12'>
                 <div className={`grid ${platformData?.images?.length === 1 ? 'grid-cols-1 grid-rows-1' : 'grid-cols-2 grid-rows-2'} gap-2 items-end h-full`}>
                     {platformData.images.map((image, index) => (
                         <Image className='rounded-md w-full h-full' src={image} width={50} height={50} alt='image' key={index} />
@@ -60,7 +60,7 @@ const Layout1X2 = ({ platformData }: { platformData: SocialCardProps }) => {
     </div>
 }
 const Layout2X1 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-1 row-span-2 p-6  rounded-2xl shadow-sm border-solid border border-gray-200 bg-${platformData.bgColor}`}>
+    return <div className={`col-span-1 row-span-2 p-6  rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200`}>
         <div className='flex justify-between flex-col h-full gap-6'>
             <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
             <div className='flex-1'>
@@ -83,14 +83,14 @@ const Layout2X2 = ({ platformData }: { platformData: SocialCardProps }) => {
         <div className='col-span-2 row-span-2'>
             <Image
                 src={platformData.images[0]}
-                className={`rounded-2xl w-full h-full lg:aspect-[3/3] object-cover  aspect-[1/1]`}
+                className={`rounded-3xl cursor-pointer hover:bg-gray-50 w-full h-full lg:aspect-[3/3] object-cover  aspect-[1/1]`}
                 alt={`${platformData.platformName} content`}
                 width={411}
                 height={368}
             />
         </div>
     ) : (
-        <div className={`col-span-2 row-span-2 p-6 rounded-2xl shadow-sm border-solid border border-gray-200 bg-${platformData.bgColor}`}>
+        <div className={`col-span-2 row-span-2 p-6 rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200`}>
             <div className='flex flex-col justify-between h-full gap-8'>
                 <div className='flex justify-between '>
                     <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />

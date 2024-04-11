@@ -15,7 +15,7 @@ import tiktokLogo from "../public/assets/images/socialLinkImages/tiktokLogo.svg"
 import youkidImg from "../public/assets/images/socialLinkImages/abc.jpeg"
 import facebookLogo from "../public/assets/images/socialLinkImages/facebookLogo.svg"
 import emailLogo from "../public/assets/images/socialLinkImages/emailLogo.svg"
-import cardImg from "../public/assets/images//socialLinkImages/cardImg.jpeg"
+import cardImg from "../public/assets/images//socialLinkImages/abc.jpeg"
 import { SocialCardProps } from "@/types/SocialCardProps";
 
 export const socialData: SocialCardProps[] = [

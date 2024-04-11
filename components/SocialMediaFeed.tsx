@@ -29,12 +29,8 @@ const SocialMediaFeed: React.FC<SocialMediaFeedProps> = ({ socialCards }) => {
     };
 
     return (
-        <div className="max-w-screen-lg mx-auto lg:p-8 md:p-8 p-4">
-            <div className={
-                socialData.some(card => card.rowSpan === 2 && card.colSpan === 2 && card.images.length !== 1) ?
-                    "grid grid-cols-2 md:grid-cols-2 xl:grid-cols-4 lg:gap-6 md:gap-4 gap-3 grid-rows" :
-                    "grid  md:grid-cols-2 lg:gap-6 md:gap-4 gap-3 grid-rows"
-            }>
+        <div className="max-w-screen-lg mx-auto">
+            <div className={'grid  grid-cols-2 md:grid-cols-4 lg:gap-6 md:gap-4 gap-3 grid-rows' }>
                 {socialData.map((card, index) => (
                     <SocialMedialCard
                         colSpan={card.colSpan}
