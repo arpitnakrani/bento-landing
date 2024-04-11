@@ -5,7 +5,7 @@ import Button from './Button';
 import { SocialPlatformOverview } from './SocialPlatformOverview';
 
 interface ISocialMediaCard {
-    rowSpan: number;
+    rowSpan: number | undefined;
     colSpan: number;
     platformData: SocialCardProps;
 }
@@ -28,7 +28,7 @@ export const SocialMedialCard = ({ colSpan, rowSpan, platformData }: ISocialMedi
 }
 
 const Layout1X1 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-1 row-span-1 h-full p-6 rounded-2xl shadow-sm border-solid border border-gray-200 max-h-[200px]    bg-${platformData.bgColor}`}>
+    return <div className={`col-span-1 row-span-1 h-full lg:p-6 md:p-6 p-4 rounded-2xl shadow-sm border-solid border border-gray-200 max-h-[200px]  bg-${platformData.bgColor} order-first`}>
         <div className='flex justify-between flex-col h-full'>
             <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
             <div>
@@ -41,15 +41,19 @@ const Layout1X1 = ({ platformData }: { platformData: SocialCardProps }) => {
 const Layout1X2 = ({ platformData }: { platformData: SocialCardProps }) => {
     return <div className={`col-span-2 row-span-1 p-6  h-full rounded-2xl shadow-sm border-solid border border-gray-200 max-h-[200px] bg-${platformData.bgColor}`}>
         <div className='flex justify-between gap-8 h-full'>
-            <div className='flex justify-between flex-col gap-4 h-full'>
+            <div className='flex justify-between flex-col gap-4 h-full w-6/12'>
                 <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
-                <div>
-                    <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
-                </div>
+                {platformData.buttonLabel &&
+                    <div>
+                        <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
+                    </div>
+                }
             </div>
-            <div className='flex-1 h-full'>
-                <div className='grid grid-cols-2 grid-rows-2 gap-2 items-end h-full'>
-                    {platformData.images.splice(0, 4).map((image, index) => <Image className={`col-span-1 row-span-1 rounded-md w-full h-full`} src={image} width={50} height={50} alt='image' key={index} />)}
+            <div className='flex-1 h-full w-6/12'>
+                <div className={`grid ${platformData?.images?.length === 1 ? 'grid-cols-1 grid-rows-1' : 'grid-cols-2 grid-rows-2'} gap-2 items-end h-full`}>
+                    {platformData.images.map((image, index) => (
+                        <Image className='rounded-md w-full h-full' src={image} width={50} height={50} alt='image' key={index} />
+                    ))}
                 </div>
             </div>
         </div>
@@ -68,25 +72,53 @@ const Layout2X1 = ({ platformData }: { platformData: SocialCardProps }) => {
         </div>
     </div>
 }
+
+
 const Layout2X2 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-2 row-span-2 p-6  rounded-2xl shadow-sm border-solid border border-gray-200 bg-${platformData.bgColor}`}>
-        <div className='flex flex-col justify-between h-full gap-8'>
-            <div className='flex justify-between '>
-                <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
-                <div>
-                    <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
-                </div>
-            </div>
-            <div className='flex-1'>
-                <div className='grid grid-cols-3 grid-rows-6 gap-2 items-end h-full'>
-                    {platformData.images.map((image, index) => <div className='col-span-1 row-span-3 h-full w-full' key={index}>
-                        <Image className={`rounded-md w-full h-full`} src={image} width={50} height={50} alt='image' key={index} />
+    // Check if there is only one image
+    const singleImage = platformData.images.length === 1 && !platformData.logo;
+
+    {/* If there is only one image, display it without other content */ }
+    return singleImage ? (
+        <div className='col-span-2 row-span-2'>
+            <Image
+                src={platformData.images[0]}
+                className={`rounded-2xl w-full h-full lg:aspect-[3/3] object-cover  aspect-[1/1]`}
+                alt={`${platformData.platformName} content`}
+                width={411}
+                height={368}
+            />
+        </div>
+    ) : (
+        <div className={`col-span-2 row-span-2 p-6 rounded-2xl shadow-sm border-solid border border-gray-200 bg-${platformData.bgColor}`}>
+            <div className='flex flex-col justify-between h-full gap-8'>
+                <div className='flex justify-between '>
+                    <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
+                    <div>
+                        <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
                     </div>
-                    )}
+                </div>
+                <div className='flex-1'>
+                    <div className='grid grid-cols-3 grid-rows-6 gap-2 items-end h-full'>
+                        {platformData.images.map((image, index) => (
+                            <div className='col-span-1 row-span-3 h-full w-full' key={index}>
+                                <Image
+                                    className={`rounded-md w-full h-full`}
+                                    src={image}
+                                    width={50}
+                                    height={50}
+                                    alt='image'
+                                    key={index}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-}
+    )
+
+
+};
 
 

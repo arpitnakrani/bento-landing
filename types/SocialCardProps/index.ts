@@ -7,14 +7,14 @@ export interface SocialCardProps {
   handle?: string;
   followers?: string;
   images: StaticImageData[]; // Array of image URLs
-  link: string;
+  link?: string;
   buttonLabel?: string;
-  bgColor?:string;
+  bgColor?: string;
   buttonBgColor?: string; // Tailwind CSS class for background color
   cardBgColor?: string; // Optional background color for the card
   pattern?: boolean; // Optional prop to indicate if the pattern should be shown
   customLayout?: string;
   website?: string;
-  rowSPan: number;
+  rowSpan?: number;
   colSpan: number
 }

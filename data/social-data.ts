@@ -8,7 +8,6 @@ import instagramImg3 from "../public/assets/images/socialLinkImages/instagramImg
 import instagramImg4 from "../public/assets/images/socialLinkImages/instagramImg4.jpeg"
 import instagramImg5 from "../public/assets/images/socialLinkImages/instagramImg5.jpeg"
 import instagramImg6 from "../public/assets/images/socialLinkImages/instagramImg6.jpeg"
-import SocialCardsContainer from "@/components/SocialMediaFeed";
 import youKidLogo from "../public/assets/images/socialLinkImages/youKidLogo.png"
 import youtubeLogo from "../public/assets/images/socialLinkImages/youtubelogo.svg"
 import instagramLogo from "../public/assets/images/socialLinkImages/instagramLogo.svg"
@@ -32,99 +31,106 @@ export const socialData: SocialCardProps[] = [
         cardBgColor: 'bg-red-100',
         customLayout: 'custom',
         bgColor: 'red-50',
-        rowSPan: 1,
-        colSpan: 1
-    },
-    {
-        logo: youtubeLogo,
-        platformName: 'YouTube',
-        handle: 'Mia W.',
-        images: [youtubeImg1, youtubeImg2, youtubeImg3, youtubeImg4],
-        link: 'https://youtube.com/user/miaw',
-        followers: '10K',
-        buttonLabel: 'Subscribe',
-        buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
-        cardBgColor: 'bg-red-100',
-        customLayout: 'custom',
-        bgColor: 'red-50',
-        rowSPan: 1,
+        rowSpan: 1,
         colSpan: 2
     },
     {
-        logo: youtubeLogo,
-        platformName: 'YouTube',
-        handle: 'Mia W.',
-        images: [youtubeImg1, youtubeImg2, youtubeImg3, youtubeImg4],
+        logo: tiktokLogo,
+        platformName: 'TikTok',
+        handle: '@meital_official',
+        images: [],
         link: 'https://youtube.com/user/miaw',
-        followers: '10K',
-        buttonLabel: 'Subscribe',
+        followers: '14K',
+        buttonLabel: 'Follow',
         buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
         cardBgColor: 'bg-red-100',
         customLayout: 'custom',
         bgColor: 'red-50',
-        rowSPan: 2,
-        colSpan: 1
-    },
-    {
-        logo: youtubeLogo,
-        platformName: 'YouTube',
-        handle: 'Mia W.',
-        images: [youtubeImg1, youtubeImg2, youtubeImg3, youtubeImg4, youtubeImg1, youtubeImg2],
-        link: 'https://youtube.com/user/miaw',
-        followers: '10K',
-        buttonLabel: 'Subscribe',
-        buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
-        cardBgColor: 'bg-red-100',
-        customLayout: 'custom',
-        bgColor: 'red-50',
-        rowSPan: 2,
+        rowSpan: 2,
         colSpan: 2
     },
     {
-        logo: youtubeLogo,
-        platformName: 'YouTube',
-        handle: 'Mia W.',
-        images: [youtubeImg1, youtubeImg2, youtubeImg3, youtubeImg4, youtubeImg1, youtubeImg2],
+        logo: youKidLogo,
+        platformName: 'Youkid | יוקיד - עולם מופלא לילדים',
+        handle: 'youkid.co.il',
+        images: [youkidImg],
         link: 'https://youtube.com/user/miaw',
-        followers: '10K',
-        buttonLabel: 'Subscribe',
-        buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
+        followers: '',
+        buttonLabel: '',
+        buttonBgColor: '', // Tailwind CSS class for background color
         cardBgColor: 'bg-red-100',
         customLayout: 'custom',
         bgColor: 'red-50',
-        rowSPan: 1,
-        colSpan: 1
-    },
-    {
-        logo: youtubeLogo,
-        platformName: 'YouTube',
-        handle: 'Mia W.',
-        images: [youtubeImg1, youtubeImg2, youtubeImg3, youtubeImg4, youtubeImg1, youtubeImg2],
-        link: 'https://youtube.com/user/miaw',
-        followers: '10K',
-        buttonLabel: 'Subscribe',
-        buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
-        cardBgColor: 'bg-red-100',
-        customLayout: 'custom',
-        bgColor: 'red-50',
-        rowSPan: 2,
-        colSpan: 1
-    },
-    {
-        logo: youtubeLogo,
-        platformName: 'YouTube',
-        handle: 'Mia W.',
-        images: [youtubeImg1, youtubeImg2, youtubeImg3, youtubeImg4, youtubeImg1, youtubeImg2],
-        link: 'https://youtube.com/user/miaw',
-        followers: '10K',
-        buttonLabel: 'Subscribe',
-        buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
-        cardBgColor: 'bg-red-100',
-        customLayout: 'custom',
-        bgColor: 'red-50',
-        rowSPan: 2,
+        rowSpan: 1,
         colSpan: 2
     },
+    {
+        platformName: '',
+        images: [cardImg],
+        link: 'https://youtube.com/user/miaw',
+        rowSpan: 2,
+        colSpan: 2
+    },
+    {
+        logo: instagramLogo,
+        platformName: '',
+        handle: 'Mia W.',
+        images: [instagramImg1, instagramImg2, instagramImg3, instagramImg4, instagramImg5, instagramImg6],
+        link: 'https://youtube.com/user/miaw',
+        followers: '4.7K',
+        buttonLabel: 'Follow',
+        buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
+        cardBgColor: 'bg-red-100',
+        customLayout: 'custom',
+        bgColor: 'red-50',
+        rowSpan: 2,
+        colSpan: 2
+    },
+    {
+        logo: facebookLogo,
+        platformName: 'My facebook',
+        handle: 'facebook.com',
+        images: [instagramImg1,],
+        link: 'https://youtube.com/user/miaw',
+        followers: '',
+        buttonLabel: '',
+        buttonBgColor: '', // Tailwind CSS class for background color
+        cardBgColor: '',
+        customLayout: 'custom',
+        bgColor: 'red-50',
+        rowSpan: 1,
+        colSpan: 2
+    },
+    {
+        logo: emailLogo,
+        platformName: 'My Email',
+        handle: 'gmail.com',
+        images: [youtubeImg1],
+        link: 'https://youtube.com/user/miaw',
+        followers: '10K',
+        buttonLabel: '',
+        buttonBgColor: '', // Tailwind CSS class for background color
+        cardBgColor: 'bg-red-100',
+        customLayout: '',
+        bgColor: 'red-50',
+        rowSpan: 1,
+        colSpan: 2
+    },
+    // {
+    //     logo: youtubeLogo,
+    //     platformName: 'YouTube',
+    //     handle: 'Mia W.',
+    //     images: [youtubeImg1, youtubeImg2, youtubeImg3, youtubeImg4, youtubeImg1, youtubeImg2],
+    //     link: 'https://youtube.com/user/miaw',
+    //     followers: '10K',
+    //     buttonLabel: 'Subscribe',
+    //     buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
+    //     cardBgColor: 'bg-red-100',
+    //     customLayout: 'custom',
+    //     bgColor: 'red-50',
+    //     rowSpan: 1,
+    //     colSpan: 2
+    // },
     // {
     //   logo: tiktokLogo,
     //   platformName: 'TikTok',
