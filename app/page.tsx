@@ -10,7 +10,7 @@ export default function Home() {
           <div className="col-span-3 lg:col-span-1">
             <ProfileCard />
           </div>
-          <div className="col-span-3 lg:col-span-2 max-h-screen overflow-y-scroll">
+          <div className="col-span-3 lg:col-span-2 max-h-screen lg:overflow-y-scroll">
             <SocialMediaFeed socialCards={socialData} />
           </div>
         </div>
