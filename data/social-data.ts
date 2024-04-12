@@ -24,7 +24,7 @@ export const socialData: SocialCardProps[] = [
         platformName: 'YouTube',
         handle: 'Mia W.',
         images: [youtubeImg1, youtubeImg2, youtubeImg3, youtubeImg4],
-        link: 'https://youtube.com/user/miaw',
+        link: 'https://www.youtube.com/@Meitale',
         followers: '10K',
         buttonLabel: 'Subscribe',
         buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
@@ -39,7 +39,7 @@ export const socialData: SocialCardProps[] = [
         platformName: 'TikTok',
         handle: '@meital_official',
         images: [],
-        link: 'https://youtube.com/user/miaw',
+        link: 'https://www.tiktok.com/@meital_official',
         followers: '14K',
         buttonLabel: 'Follow',
         buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
@@ -54,7 +54,7 @@ export const socialData: SocialCardProps[] = [
         platformName: 'Youkid | יוקיד - עולם מופלא לילדים',
         handle: 'youkid.co.il',
         images: [youkidImg],
-        link: 'https://youtube.com/user/miaw',
+        link: 'https://www.youkid.co.il/',
         followers: '',
         buttonLabel: '',
         buttonBgColor: '', // Tailwind CSS class for background color
@@ -67,7 +67,6 @@ export const socialData: SocialCardProps[] = [
     {
         platformName: '',
         images: [cardImg],
-        link: 'https://youtube.com/user/miaw',
         rowSpan: 2,
         colSpan: 2
     },
@@ -76,7 +75,7 @@ export const socialData: SocialCardProps[] = [
         platformName: '',
         handle: 'Mia W.',
         images: [instagramImg1, instagramImg2, instagramImg3, instagramImg4, instagramImg5, instagramImg6],
-        link: 'https://youtube.com/user/miaw',
+        link: 'https://www.instagram.com/meital_official/?igsh=MXB1a3p2ZW55YWU0bg%3D%3D&utm_source=qr',
         followers: '4.7K',
         buttonLabel: 'Follow',
         buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
@@ -91,7 +90,7 @@ export const socialData: SocialCardProps[] = [
         platformName: 'My facebook',
         handle: 'facebook.com',
         images: [youkidImg],
-        link: 'https://youtube.com/user/miaw',
+        link: 'https://www.facebook.com/meitalofficial?mibextid=LQQJ4d&rdid=UYphxH4YUaOTIOj0',
         followers: '',
         buttonLabel: '',
         buttonBgColor: '', // Tailwind CSS class for background color
@@ -106,7 +105,7 @@ export const socialData: SocialCardProps[] = [
         platformName: 'My Email',
         handle: 'gmail.com',
         images: [youkidImg],
-        link: 'https://youtube.com/user/miaw',
+        link: 'https://mail.google.com/mail/u/0/',
         followers: '10K',
         buttonLabel: '',
         buttonBgColor: '', // Tailwind CSS class for background color
@@ -115,89 +114,5 @@ export const socialData: SocialCardProps[] = [
         bgColor: 'red-50',
         rowSpan: 1,
         colSpan: 2
-    },
-    // {
-    //     logo: youtubeLogo,
-    //     platformName: 'YouTube',
-    //     handle: 'Mia W.',
-    //     images: [youtubeImg1, youtubeImg2, youtubeImg3, youtubeImg4, youtubeImg1, youtubeImg2],
-    //     link: 'https://youtube.com/user/miaw',
-    //     followers: '10K',
-    //     buttonLabel: 'Subscribe',
-    //     buttonBgColor: 'bg-customRed', // Tailwind CSS class for background color
-    //     cardBgColor: 'bg-red-100',
-    //     customLayout: 'custom',
-    //     bgColor: 'red-50',
-    //     rowSpan: 1,
-    //     colSpan: 2
-    // },
-    // {
-    //   logo: tiktokLogo,
-    //   platformName: 'TikTok',
-    //   handle: 'TikTok',
-    //   followers: '4.7K', // Ensure followers is a string
-    //   images: [youkidImg],
-    //   link: 'https://www.tiktok.com/@meital_official',
-    //   buttonLabel: 'Follow',
-    //   buttonBgColor: 'bg-red-600', // Tailwind CSS class for background color
-    //   website: "@meital_official",
-    //   bgColor: 'red-50'
-
-    // },
-    // {
-    //   logo: youKidLogo,
-    //   platformName: 'Youkid',
-    //   handle: "Youkid | יוקיד - עולם מופלא לילדים",
-    //   followers: '',
-    //   website: 'youkid.co.il',
-    //   images: [youkidImg],
-    //   link: 'https://www.youkid.co.il/',
-    //   customLayout: 'custom',
-    //   bgColor: 'red-50'
-
-    // },
-    // {
-    //   platformName: 'imageOnly',
-    //   images: [cardImg],// Replace with actual image paths
-    //   link: 'https://www.instagram.com/meital_official/?igsh=MXB1a3p2ZW55YWU0bg%3D%3D&utm_source=qr',
-    //   customLayout: "imageOnly",
-    //   bgColor: 'red-50'
-
-    // },
-    // {
-    //   logo: instagramLogo,
-    //   platformName: 'Instagram',
-    //   handle: '@mia_w.',
-    //   website: "",
-    //   followers: '4.7K',
-    //   images: [
-    //     instagramImg1, instagramImg2, instagramImg3,
-    //     instagramImg4, instagramImg5, instagramImg6
-    //   ],// Replace with actual image paths
-    //   link: 'https://www.instagram.com/meital_official/?igsh=MXB1a3p2ZW55YWU0bg%3D%3D&utm_source=qr',
-    //   buttonLabel: 'Follow',
-    //   buttonBgColor: 'bg-customBlue', // Tailwind CSS class for background color
-    //   bgColor: 'red-50'
-
-    // },
-    // {
-    //   logo: facebookLogo,
-    //   platformName: 'Facebook',
-    //   handle: "My facebook",
-    //   followers: '', // Add an empty string or a suitable value
-    //   website: 'facebook.com',
-    //   images: [youkidImg],
-    //   link: 'https://www.youkid.co.il/',
-    //   customLayout: 'custom'
-    // },
-    // {
-    //   logo: emailLogo,
-    //   platformName: 'Email',
-    //   handle: "My Email",
-    //   followers: '', // Add an empty string or a suitable value
-    //   website: 'gmail.com',
-    //   images: [youkidImg],
-    //   link: 'https://www.youkid.co.il/',
-    //   customLayout: 'custom'
-    // },
+    }
 ];

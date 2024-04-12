@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react'
 import Button from './Button';
 import { SocialPlatformOverview } from './SocialPlatformOverview';
+import Link from 'next/link';
 
 interface ISocialMediaCard {
     rowSpan: number | undefined;
@@ -28,18 +29,18 @@ export const SocialMedialCard = ({ colSpan, rowSpan, platformData }: ISocialMedi
 }
 
 const Layout1X1 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-1 row-span-1  lg:p-6 md:p-6 p-4 rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200 h-[200px]  order-first`}>
+    return <Link href={platformData.link || ""} target='blank' className={`col-span-1 row-span-1  lg:p-6 md:p-6 p-4 rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200 h-[200px]  order-first`}>
         <div className='flex justify-between flex-col h-full'>
             <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
             <div>
                 <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
             </div>
         </div>
-    </div>
+    </Link>
 
 }
 const Layout1X2 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-2 row-span-1 p-6   rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200 h-[200px]`}>
+    return <Link href={platformData.link || ""} target='blank' className={`col-span-2 row-span-1 p-6   rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200 h-[200px]`}>
         <div className='flex justify-between gap-8 h-full'>
             <div className='flex justify-between flex-col gap-4 h-full w-5/12'>
                 <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
@@ -57,10 +58,10 @@ const Layout1X2 = ({ platformData }: { platformData: SocialCardProps }) => {
                 </div>
             </div>
         </div>
-    </div>
+    </Link>
 }
 const Layout2X1 = ({ platformData }: { platformData: SocialCardProps }) => {
-    return <div className={`col-span-1 row-span-2 p-6  rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200`}>
+    return <Link href={platformData.link || ""} target='blank' className={`col-span-1 row-span-2 p-6  rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200`}>
         <div className='flex justify-between flex-col h-full gap-6'>
             <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
             <div className='flex-1'>
@@ -70,7 +71,7 @@ const Layout2X1 = ({ platformData }: { platformData: SocialCardProps }) => {
                 <Button classNames='text-xs bg-red-600 rounded-xl text-white font-bold'>{platformData.buttonLabel} {platformData.followers}</Button>
             </div>
         </div>
-    </div>
+    </Link>
 }
 
 
@@ -90,7 +91,7 @@ const Layout2X2 = ({ platformData }: { platformData: SocialCardProps }) => {
             />
         </div>
     ) : (
-        <div className={`col-span-2 row-span-2 p-6 rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200`}>
+        <Link href={platformData.link || ""} target='blank' className={`col-span-2 row-span-2 p-6 rounded-3xl cursor-pointer hover:bg-gray-50 shadow-custom border-solid border border-gray-200`}>
             <div className='flex flex-col justify-between h-full gap-8'>
                 <div className='flex justify-between '>
                     <SocialPlatformOverview logo={platformData.logo || ''} platformName={platformData.platformName} userName={platformData.handle || ''} />
@@ -115,7 +116,7 @@ const Layout2X2 = ({ platformData }: { platformData: SocialCardProps }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 
 
