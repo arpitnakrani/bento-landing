@@ -16,5 +16,7 @@ export interface SocialCardProps {
   customLayout?: string;
   website?: string;
   rowSpan?: number;
-  colSpan: number
+  colSpan: number;
+  type:'INFO_FEED' | 'IMAGE_FEED'
+
 }
